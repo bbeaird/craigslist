@@ -1,0 +1,16 @@
+<h1><%= @category.name.capitalize %></h1>
+
+<%= form_for [@category, @post] do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :description %>
+  <%= f.text_field :price %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @category.posts.each do |post| %>
+    <li><%= post.title %></li>
+  <% end %>
+</ul>
+
+
